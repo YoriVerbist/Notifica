@@ -8,8 +8,14 @@ $(function(){
         $('#' + $(this).data('show')).show();       // Looks for what id is clicked and only shows that div
         $('.sidenav').sidenav('close');             // Closes side-nav
     });
+
+    $('#addTask').click(function(){
+        console.log("Taak toevoegen app");
+        ToDo.addTask();
+    });
 });
 
 function onDeviceReady() {
     console.log('Device is ready');
+    ToDo.init();
 }

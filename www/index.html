@@ -27,14 +27,11 @@
                 </div>
             </li>
             <li><a class="waves-effect" href="#!" data-show="tabHome">Info</a></li>
-            <li class="logged-in" style="display: none;"><a class="waves-effect" href="#!" data-show="tabTODO">TO-DO</a></li>
-            <li class="logged-in" style="display: none;"><a class="waves-effect" data-show="tabBoodschappen">Boodschappenlijstje</a></li>
-            <li class="logged-in" style="display: none;">
+            <li ><a class="waves-effect" href="#!" data-show="tabTODO">TO-DO</a></li>
+            <li ><a class="waves-effect" data-show="tabBoodschappen">Boodschappenlijstje</a></li>
+            <li >
                 <a class="waves-effect" href="#" data-show="tabBoodschappenToevoegen">Boodschappenlijstje maken</a>
             </li>
-                <li class="logged-out" style="display: none;"><a class="waves-effect" href="#!" data-show="tabLogin">Login</a></li>
-            <li class="logged-out" style="display: none;"><a class="waves-effect" href="#!" data-show="tabSignUp">Sign up</a></li>
-            <li class="logged-in" style="display: none;"><a class="waves-effect" href="#!" data-show="tabLogout" id="tabLogout">Logout</a></li>
         </ul>
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </nav>
@@ -60,7 +57,7 @@
     <div class = "col s12 m7">
         <h1>todos</h1>
         <input type="text" name="task" id="task">
-        <button id="add"><a class="btn-floating btn-medium waves-effect waves-light green"><i class="material-icons">add</i></a></button>
+        <button id="addTask"><a class="btn-floating btn-medium waves-effect waves-light green"><i class="material-icons">Add</i></a></button>
         <hr>
         <div id="todos" class="row"></div>
     </div>
@@ -132,6 +129,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
     <script type="text/javascript" src="./js/navbar.js"></script>
+    <script type="text/javascript" src="./js/todo.js"></script>
 </body>
 
 </html>
