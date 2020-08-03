@@ -12,8 +12,8 @@ let ToDo = function(){
 
         for(let i = 0; i < _todos.length; i++) {
             let task = `<li class="collection-item avatar"> 
-			<i class="material-icons circle red deleteTask" data-task="${i}">delete_forever</i>
-			<div class="title" data-task="${i}" contenteditable>${_todos[i]}</div>
+            <div class="title" data-task="${i}">${_todos[i]}</div>
+            <i class="material-icons circle red deleteTask" data-task="${i}">delete_forever</i>
             </li>`;
         
             $('#todos').append(task);
@@ -21,13 +21,16 @@ let ToDo = function(){
     };
 
     let addTask = function(){
-        console.log("Taak toevoegen todo");
-
         // Taak ophalen
         let task = $('#task').val();
 
 
         _todos.push(task);
+        _setLocalStorage();
+    };
+
+    let deleteTask = function(id){
+        _todos.splice(id, 1);
         _setLocalStorage();
     };
 
@@ -38,7 +41,7 @@ let ToDo = function(){
     return {
         init: init,
         addTask: addTask,
-        // deleteTask : deleteTask,
+        deleteTask : deleteTask,
         // editTask : editTask
     };
 }();

@@ -10,8 +10,14 @@ $(function(){
     });
 
     $('#addTask').click(function(){
-        console.log("Taak toevoegen app");
         ToDo.addTask();
+    });
+
+    $('#deleteTask').click(function(){
+        console.log("Taak wissen");
+        let id = $(this.data('task'));
+        console.log(id);
+        ToDo.deleteTask(id);
     });
 });
 
