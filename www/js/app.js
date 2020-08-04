@@ -13,9 +13,9 @@ $(function(){
         ToDo.addTask();
     });
 
-    $('#deleteTask').click(function(){
+    $('#todos').on('click', '#deleteTask', function(){
         console.log("Taak wissen");
-        let id = $(this.data('task'));
+        let id = $(this).data('task');
         console.log(id);
         ToDo.deleteTask(id);
     });

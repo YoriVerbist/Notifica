@@ -13,7 +13,7 @@ let ToDo = function(){
         for(let i = 0; i < _todos.length; i++) {
             let task = `<li class="collection-item avatar"> 
             <div class="title" data-task="${i}">${_todos[i]}</div>
-            <i class="material-icons circle red deleteTask" data-task="${i}">delete_forever</i>
+            <i class="material-icons circle red" id="deleteTask" data-task="${i}">delete_forever</i>
             </li>`;
         
             $('#todos').append(task);
