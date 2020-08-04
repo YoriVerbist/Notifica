@@ -2,75 +2,77 @@
 <html>
 
 <head>
-    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Notifica</title>
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Notifica</title>
 </head>
 
 <body>
-    <nav class="orange darken-2">
-        <ul id="slide-out" class="sidenav">
-            <li>
-                <h1>Notifica</h1>
-            </li>
-            <li>
-                <div class="user-view">
-                    <div class="background">
-                        <img>
-                    </div>
-                    <a href="#user"  data-show="tabHome"><img class="circle" src="img/icon.png"></a>
-                    <a href="#name"  data-show="tabHome"><span class="black-text name">Notifica</span></a>
-                    <div class="divider"></div>
-                </div>
-            </li>
-            <li><a class="waves-effect" href="#!" data-show="tabHome">Info</a></li>
-            <li ><a class="waves-effect" href="#!" data-show="tabTODO">TO-DO</a></li>
-            <li ><a class="waves-effect" data-show="tabBoodschappen">Boodschappenlijstje</a></li>
-            <li >
-                <a class="waves-effect" href="#" data-show="tabBoodschappenToevoegen">Boodschappenlijstje maken</a>
-            </li>
-        </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </nav>
-    <div id="tabHome" class="container spa" style="margin-top: 30%;">
-        <div class="row">
-            <div class="col s12 m6">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">Yori Verbist</span>
-                        <p>In deze app vind je een TODO app en een boodschappenlijste ineen.</p>
-                        <p></p>
-                    </div>
-                    <div class="card-action">
-                        <a href="tel:0476405549">Bel me!</a>
-                        <a href="sms:0476405549">SMS me</a>
-                        <p style="color: white">yori.verbist12@gmail.com</p>
-                    </div>
-                </div>
-            </div>
+  <nav class="orange darken-2">
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <h1>Notifica</h1>
+      </li>
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img>
+          </div>
+          <a href="#user" data-show="tabHome"><img class="circle" src="img/icon.png"></a>
+          <a href="#name" data-show="tabHome"><span class="black-text name">Notifica</span></a>
+          <div class="divider"></div>
         </div>
-    </div>
-    <div id="tabTODO" class="spa container" style="display: none;">
-    <div class = "col s12 m7">
-        <h1>Taken</h1>
-        <input type="text" name="task" id="task">
-        <button id="addTask"><a class="btn-floating btn-medium waves-effect waves-light green"><i class="material-icons">Add</i></a></button>
-        <hr>
-        <div>
-        <ul id="todos" class="collection"></ul></div>
-    </div>
-    </div>
-
-    <div id="tabBoodschappen" class="spa" style="display: none;">
-        <h1>Boodschappenlijstje</h1>
-        <div id="boodschappen" class="container">
+      </li>
+      <li><a class="waves-effect" href="#!" data-show="tabHome">Info</a></li>
+      <li><a class="waves-effect" href="#!" data-show="tabTODO">TO-DO</a></li>
+      <li><a class="waves-effect" data-show="tabBoodschappen">Boodschappenlijstje</a></li>
+      <li>
+        <a class="waves-effect" href="#" data-show="tabBoodschappenToevoegen">Boodschappenlijstje maken</a>
+      </li>
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </nav>
+  <div id="tabHome" class="container spa" style="margin-top: 30%;">
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Yori Verbist</span>
+            <p>In deze app vind je een TODO app en een boodschappenlijste ineen.</p>
+            <p></p>
+          </div>
+          <div class="card-action">
+            <a href="tel:0476405549">Bel me!</a>
+            <a href="sms:0476405549">SMS me</a>
+            <p style="color: white">yori.verbist12@gmail.com</p>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  <div id="tabTODO" class="spa container" style="display: none;">
+    <div class="col s12 m7">
+      <h1>Taken</h1>
+      <input type="text" name="task" id="task">
+      <button id="addTask"><a class="btn-floating btn-medium waves-effect waves-light green"><i
+            class="material-icons">Add</i></a></button>
+      <hr>
+      <div>
+        <ul id="todos" class="collection"></ul>
+      </div>
+    </div>
+  </div>
 
-      <!-- CREATE GUIDE MODAL -->
+  <div id="tabBoodschappen" class="spa" style="display: none;">
+    <h1>Boodschappenlijstje</h1>
+    <div id="boodschappen" class="container">
+    </div>
+  </div>
+
+  <!-- CREATE GUIDE MODAL -->
   <div id="tabBoodschappenToevoegen" class="spa container" style="display: none;">
     <div class="modal-content">
       <h4 class="center-align" style="font-size:24px;">Boodschappenlijstje maken</h4><br />
@@ -88,7 +90,7 @@
     </div>
   </div>
 
-     <!-- SIGN UP MODAL -->
+  <!-- SIGN UP MODAL -->
   <div id="tabSignUp" class="modal spa" style="display: none;">
     <div class="modal-content">
       <h4>Sign up</h4><br />
@@ -123,14 +125,44 @@
     </div>
   </div>
 
-      <!-- jquery js file-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- jquery js file-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="./js/app.js"></script>
-    <script type="text/javascript" src="./js/navbar.js"></script>
-    <script type="text/javascript" src="./js/todo.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAkDtypbo2btIIM8x68ldVZmzlqZGPzZJg",
+      authDomain: "notifica-3c499.firebaseapp.com",
+      databaseURL: "https://notifica-3c499.firebaseio.com",
+      projectId: "notifica-3c499",
+      storageBucket: "notifica-3c499.appspot.com",
+      messagingSenderId: "528729634295",
+      appId: "1:528729634295:web:29c5939bb7dc2cc4646af2",
+      measurementId: "G-RJC237DSJH"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const firebase = require("firebase");
+    // Required for side-effects
+    require("firebase/firestore");
+
+  </script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
+  <script type="text/javascript" src="./js/navbar.js"></script>
+  <script type="text/javascript" src="./js/todo.js"></script>
+  <script type="text/javascript" src="./js/firebase.js"></script>
 </body>
 
 </html>

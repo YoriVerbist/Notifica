@@ -41,7 +41,6 @@ let ToDo = function(){
     return {
         init: init,
         addTask: addTask,
-        deleteTask : deleteTask,
-        // editTask : editTask
+        deleteTask : deleteTask
     };
 }();
