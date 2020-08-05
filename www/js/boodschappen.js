@@ -4,19 +4,22 @@ let Boodschappen = function(){
     let _fireStore = function(){
         db.collection("Boodschappen").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                _boodschappen.push(doc.data());
+                if (!_boodschappen.find((boodschap) => boodschap.id === doc.id)){
+                    _boodschappen.push({...doc.data(), id: doc.id});
+                }
             });
+
+            _show();
         });
 
         console.log(_boodschappen);
-        _show();
     };
 
     let _show = function(){
         $('#boodschappen').empty();
 
         for(let i = 0; i < _boodschappen.length; i++){
-            if (!_boodschappen.contains(_boodschappen[i])) {
+            if (_boodschappen.find((boodschap) => boodschap.id === _boodschappen[i].id)) {
                 let boodschap = `<li class="collection-item avatar"> 
                     <div class="title" data-task="${i}">${_boodschappen[i].Datum}</div>
                     <i class="material-icons circle red" id="deleteBoodschap" data-task="${i}">delete_forever</i>
@@ -29,6 +32,10 @@ let Boodschappen = function(){
 
     let addBoodschap = function(){
         let item = $('#')
+    };
+
+    let deletaBoodschap = function(){
+        
     };
 
     let makeList = function(){
