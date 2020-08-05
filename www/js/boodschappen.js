@@ -35,7 +35,7 @@ let Boodschappen = function(){
         let item = $('#' + id).val();
         
         db.collection("Boodschappen").doc(id).update({
-            items: [item]
+            items: firebase.firestore.FieldValue.arrayUnion(item)
         })
         .then(function() {
             console.log("Document successfully written!");
