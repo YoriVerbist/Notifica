@@ -27,7 +27,14 @@ $(function () {
         $('#boodschappenList').on('click', '#deleteBoodschap', function() {
             console.log("Boodschap wissen");
             let id = $(this).data('boodschap');
+            console.log(id);
             Boodschappen.deleteBoodschap(id);
+        });
+
+        $('#boodschappenList').on('click', '#addBoodschap', function() {
+            let id = $(this).data('boodschap');
+            console.log(id);
+            Boodschappen.addBoodschap(id);
         });
 });
 

@@ -23,16 +23,27 @@ let Boodschappen = function(){
                 let boodschap = `<li class="collection-item avatar"> 
                     <div class="title" data-boodschap="${_boodschappen[i].id}">${_boodschappen[i].Datum}</div>
                     <i class="material-icons circle red" id="deleteBoodschap" data-boodschap="${_boodschappen[i].id}">delete_forever</i>
-                    </li><input type="text" name="task" id="task">
-                    <button id="addTask"><a class="btn-floating btn-medium waves-effect waves-light green"><i
-                          class="material-icons">Add</i></a></button>`;
+                    <input type="text" name="boodschap" id="${_boodschappen[i].id}">
+                    <i class="material-icons circle green" id="addBoodschap" data-boodschap="${_boodschappen[i].id}">note_add</i>
+                    </a></button></li>`;
                 $('#boodschappenList').append(boodschap);
             }
         }
     };
 
-    let addBoodschap = function(){
-        let item = $('#');
+    let addBoodschap = function(id){
+        let item = $('#' + id).val();
+        
+        db.collection("Boodschappen").doc(id).update({
+            items: [item]
+        })
+        .then(function() {
+            console.log("Document successfully written!");
+            _fireStore();
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
     };
 
     let deleteBoodschap = function(id){
