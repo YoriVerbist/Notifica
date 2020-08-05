@@ -68,8 +68,10 @@
 
   <div id="tabBoodschappen" class="spa" style="display: none;">
     <h1>Boodschappenlijstje</h1>
-    <div id="boodschappen" class="container">
-    </div>
+    <divclass="container">
+      <ul id="boodschappenList" class="collection"></ul>
+
+      </divclass=>
   </div>
 
   <!-- CREATE GUIDE MODAL -->
@@ -80,10 +82,6 @@
         <div class="input-field">
           <input type="date" name="date" id="date" required>
           <label for="date">Datum</label>
-        </div>
-        <div class="input-field">
-          <input id="boodschappen" name="boodschappen" type="text" required></input>
-          <label for="boodschappen">Benodigdheden</label>
         </div>
         <button class="btn yellow darken-2 z-depth-0">Create</button>
       </form>
@@ -137,7 +135,7 @@
 
   <script>
     // Your web app's Firebase configuration
-    var firebaseConfig = {
+    const firebaseConfig = {
       apiKey: "AIzaSyAkDtypbo2btIIM8x68ldVZmzlqZGPzZJg",
       authDomain: "notifica-3c499.firebaseapp.com",
       databaseURL: "https://notifica-3c499.firebaseio.com",
@@ -155,6 +153,7 @@
     // Required for side-effects
     require("firebase/firestore");
 
+    let db = firebase.firestore();
   </script>
 
   <!-- Compiled and minified JavaScript -->

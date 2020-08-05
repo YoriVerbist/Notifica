@@ -19,6 +19,10 @@ $(function(){
         console.log(id);
         ToDo.deleteTask(id);
     });
+
+    $('#makeList').click(function(){
+        Boodschappen.makeList();
+    });
 });
 
 function onDeviceReady() {
