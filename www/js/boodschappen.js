@@ -22,6 +22,7 @@ let Boodschappen = function(){
             if (_boodschappen.find((boodschap) => boodschap.id === _boodschappen[i].id)) {
                 let boodschap = `<li class="collection-item avatar"> 
                     <div class="title" data-boodschap="${_boodschappen[i].id}">${_boodschappen[i].Datum}</div>
+                    <ul><li>${_boodschappen[i].items}</li></ul>
                     <i class="material-icons circle red" id="deleteBoodschap" data-boodschap="${_boodschappen[i].id}">delete_forever</i>
                     <input type="text" name="boodschap" id="${_boodschappen[i].id}">
                     <i class="material-icons circle green" id="addBoodschap" data-boodschap="${_boodschappen[i].id}">note_add</i>
