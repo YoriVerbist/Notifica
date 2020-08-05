@@ -27,10 +27,9 @@ let Boodschappen = function(){
     };
 
     let makeList = function(){
-        let list = $('#tabBoodschappen').val();
         let date = $('#date').val();
 
-        db.collection("boodschappen").set({
+        db.collection("Boodschappen").add({
             Datum: date
         })
         .then(function() {
@@ -40,4 +39,14 @@ let Boodschappen = function(){
             console.error("Error writing document: ", error);
         });
     };
-}
+
+    let init = function(){
+        console.log('de boodschappen app start op...');
+    };
+
+    return {
+        init,
+        makeList,
+        addBoodschap
+    };
+}();
