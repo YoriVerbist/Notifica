@@ -16,26 +16,35 @@ let Boodschappen = function(){
     };
 
     let _show = function(){
-        $('#boodschappen').empty();
+        $('#boodschappenList').empty();
 
         for(let i = 0; i < _boodschappen.length; i++){
             if (_boodschappen.find((boodschap) => boodschap.id === _boodschappen[i].id)) {
                 let boodschap = `<li class="collection-item avatar"> 
-                    <div class="title" data-task="${i}">${_boodschappen[i].Datum}</div>
-                    <i class="material-icons circle red" id="deleteBoodschap" data-task="${i}">delete_forever</i>
-                    </li>`;
-                    console.log(_boodschappen[i].Datum);
+                    <div class="title" data-boodschap="${_boodschappen[i].id}">${_boodschappen[i].Datum}</div>
+                    <i class="material-icons circle red" id="deleteBoodschap" data-boodschap="${_boodschappen[i].id}">delete_forever</i>
+                    </li><input type="text" name="task" id="task">
+                    <button id="addTask"><a class="btn-floating btn-medium waves-effect waves-light green"><i
+                          class="material-icons">Add</i></a></button>`;
                 $('#boodschappenList').append(boodschap);
             }
         }
     };
 
     let addBoodschap = function(){
-        let item = $('#')
+        let item = $('#');
     };
 
-    let deletaBoodschap = function(){
-        
+    let deleteBoodschap = function(id){
+
+        let index = _boodschappen.findIndex((item) => item.id === id);
+        db.collection("Boodschappen").doc(id).delete().then(function() {
+            console.log("Document successfully deleted!");
+            _boodschappen.splice(index, 1);
+            _fireStore();
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
     };
 
     let makeList = function(){
@@ -62,6 +71,7 @@ let Boodschappen = function(){
     return {
         init,
         makeList,
-        addBoodschap
+        addBoodschap,
+        deleteBoodschap
     };
 }();

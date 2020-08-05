@@ -17,12 +17,17 @@ $(function () {
         $('#todos').on('click', '#deleteTask', function () {
             console.log("Taak wissen");
             let id = $(this).data('task');
-            console.log(id);
             ToDo.deleteTask(id);
         });
 
         $('#makeList').click(function () {
             Boodschappen.makeList();
+        });
+
+        $('#boodschappenList').on('click', '#deleteBoodschap', function() {
+            console.log("Boodschap wissen");
+            let id = $(this).data('boodschap');
+            Boodschappen.deleteBoodschap(id);
         });
 });
 
