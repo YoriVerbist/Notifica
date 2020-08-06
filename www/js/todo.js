@@ -21,9 +21,7 @@ let ToDo = function(){
     };
 
     let addTask = function(){
-        // Taak ophalen
         let task = $('#task').val();
-
 
         _todos.push(task);
         _setLocalStorage();

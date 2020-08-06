@@ -25,7 +25,7 @@ let Boodschappen = function(){
                     <i class="material-icons circle red" id="deleteBoodschap" data-boodschap="${_boodschappen[i].id}">delete_forever</i>
                     <input type="text" name="boodschap" id="${_boodschappen[i].id}">
                     <i class="material-icons circle green" id="addBoodschap" data-boodschap="${_boodschappen[i].id}">note_add</i>
-                    </a></button></li>`;
+                    </a></button></li><hr>`;
                 $('#boodschappenList').append(boodschap);
                 if (_boodschappen[i].items) {
                     console.log("here, boodschappen: " + i);

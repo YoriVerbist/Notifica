@@ -22,6 +22,7 @@ $(function () {
 
         $('#makeList').click(function () {
             Boodschappen.makeList();
+            Calendar.addCalendar();
         });
 
         $('#boodschappenList').on('click', '#deleteBoodschap', function() {

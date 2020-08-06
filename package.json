@@ -14,10 +14,12 @@
     "license": "Apache-2.0",
     "cordova": {
         "plugins": {
-            "cordova-plugin-whitelist": {}
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-calendar": {}
         }
     },
     "dependencies": {
+        "cordova-plugin-calendar": "^5.1.5",
         "cordova-plugin-whitelist": "1"
     }
 }
