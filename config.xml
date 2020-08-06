@@ -23,4 +23,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="cordova-plugin-calendar" />
+    <preference name="android-build-tool" value="gradle" />
 </widget>

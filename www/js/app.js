@@ -23,6 +23,7 @@ $(function () {
         $('#makeList').click(function () {
             Boodschappen.makeList();
             Calendar.addCalendar();
+            navigator.vibrate(500);
         });
 
         $('#boodschappenList').on('click', '#deleteBoodschap', function() {

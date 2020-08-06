@@ -15,11 +15,20 @@
     "cordova": {
         "plugins": {
             "cordova-plugin-whitelist": {},
-            "cordova-plugin-calendar": {}
-        }
+            "cordova-plugin-calendar": {},
+            "cordova-plugin-vibration": {}
+        },
+        "platforms": [
+            "android"
+        ]
     },
     "dependencies": {
         "cordova-plugin-calendar": "^5.1.5",
         "cordova-plugin-whitelist": "1"
+    },
+    "devDependencies": {
+        "cordova-android": "^9.0.0",
+        "cordova-browser": "^6.0.0",
+        "cordova-plugin-vibration": "^3.1.1"
     }
 }

@@ -9,10 +9,12 @@ let Calendar = function(){
         const endDate = _addDays(date, 1);
         let title = "Boodschappen";
         let eventLocation = "Winkel";
+        let notes = "Boodschappen";
         let success = function(message) { alert("Success: " + JSON.stringify(message)); };
         let error = function(message) { alert("Error: " + message); };
+        console.log(startDate);
         
-        window.plugins.calendar.createEvent(title, eventLocation, startDate, endDate, success, error);
+        window.plugins.calendar.createEvent(title, eventLocation, notes, startDate, endDate, success, error);
     };
 
     let _addDays = function(date, days){
