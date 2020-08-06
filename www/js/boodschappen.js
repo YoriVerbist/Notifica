@@ -2,11 +2,10 @@ let Boodschappen = function(){
     let _boodschappen = [];
 
     let _fireStore = function(){
+        _boodschappen = [];
         db.collection("Boodschappen").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                if (!_boodschappen.find((boodschap) => boodschap.id === doc.id)){
-                    _boodschappen.push({...doc.data(), id: doc.id});
-                }
+                _boodschappen.push({...doc.data(), id: doc.id});
             });
 
             _show();
@@ -22,12 +21,19 @@ let Boodschappen = function(){
             if (_boodschappen.find((boodschap) => boodschap.id === _boodschappen[i].id)) {
                 let boodschap = `<li class="collection-item avatar"> 
                     <div class="title" data-boodschap="${_boodschappen[i].id}">${_boodschappen[i].Datum}</div>
-                    <ul><li>${_boodschappen[i].items}</li></ul>
+                    <ul id="items${i}"></ul>
                     <i class="material-icons circle red" id="deleteBoodschap" data-boodschap="${_boodschappen[i].id}">delete_forever</i>
                     <input type="text" name="boodschap" id="${_boodschappen[i].id}">
                     <i class="material-icons circle green" id="addBoodschap" data-boodschap="${_boodschappen[i].id}">note_add</i>
                     </a></button></li>`;
                 $('#boodschappenList').append(boodschap);
+                if (_boodschappen[i].items) {
+                    console.log("here, boodschappen: " + i);
+                    for (let j = 0; j < _boodschappen[i].items.length; j++) {
+                        let boodschap = `<li class="collection-item">${_boodschappen[i].items[j]}</li>`;
+                        $('#items' + i).append(boodschap);
+                    }
+                }
             }
         }
     };
@@ -67,12 +73,13 @@ let Boodschappen = function(){
         })
         .then(function() {
             console.log("Document successfully written!");
+            _fireStore();
         })
         .catch(function(error) {
             console.error("Error writing document: ", error);
         });
 
-        _fireStore();
+        
     };
 
     let init = function(){
